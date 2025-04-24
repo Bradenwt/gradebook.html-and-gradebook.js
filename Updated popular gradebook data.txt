@@ -1,0 +1,31 @@
+function populateGradebook(data) {
+    // This function will take the fetched grade data and populate the table
+    console.log("Populating gradebook with data:", data);
+    let tableElm = document.getElementById("gradebook"); // Get the gradebook table element
+
+    data.forEach(function(assignment) { // For each row of data we're passed in
+        let row = document.createElement("tr"); // create a table row element
+        let columns = {}; // Use an object to store the columns of information
+
+        // Create the first column for the name
+        columns.name = document.createElement('td'); // Corrected the syntax for creating a table data element
+        columns.name.appendChild(
+            // Concatenate the full name: "last_name, first_name"
+            document.createTextNode(assignment.last_name + ", " + assignment.first_name) // Corrected the variable name
+        );
+
+        // Create the second column for the grade
+        columns.grade = document.createElement('td'); // Corrected the syntax for creating a table data element
+        columns.grade.appendChild(
+            // Just put the total grade in
+            document.createTextNode(assignment.total_grade) // Ensure this references the correct property
+        );
+
+        // Add the table data columns to the table row
+        row.appendChild(columns.name);
+        row.appendChild(columns.grade);
+
+        // Add the row to the table itself to make the data visible
+        tableElm.appendChild(row);
+    });
+}
