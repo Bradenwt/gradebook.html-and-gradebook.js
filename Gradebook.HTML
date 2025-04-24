@@ -10,8 +10,8 @@ function populateGradebook(data)
         // Create the first column for the name
         columns.name = document.createElement('td'); // Corrected the syntax for creating a table data element
         columns.name.appendChild(
-            // Concatenate the full name: "last_name, first_name"
-            document.createTextNode(assignment.last_name + ", " + assignment.first_name) // Corrected the variable name
+            // Concatenate the full name: "Filsinger, Braden"
+            document.createTextNode(Gradebook.HTML Filsinger + ", " + Gradebook.HTML Braden) // Corrected the variable name
         );
 
         // Create the second column for the grade
@@ -51,7 +51,7 @@ function fetchGradeDatafor Gradebook.HTML() {
             }
 
             // And then call the function to update the HTML with our data
-            populateGradebook(JSON.parse(xhr.responseText));
+            populateGradebookHTML(JSON.parse(xhr.responseText));
         }
     }.bind(this);
 
