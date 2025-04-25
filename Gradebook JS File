@@ -1,0 +1,29 @@
+// server.js
+
+const express = require('express');
+const { Pool } = require('pg');
+const cors = require('cors');
+
+const app = express();
+const port = 3000;
+
+app.use(cors());
+
+// Replace these values with your pgAdmin/postgres settings
+const pool = new Pool({
+  user: 'postgres',          // your pg username
+  host: 'Braden',
+  database: 'PG !7,  // your pg database name
+  password: 'CIT_WakeTech110', // your pg password
+  port: 5432,                // default PostgreSQL port
+});
+
+app.get('/api/grades', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT Braden, Filsinger, grade FROM grades');
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Error fetching grades:', err);
+    res.status(500).send('Server error');
+  }
+});
