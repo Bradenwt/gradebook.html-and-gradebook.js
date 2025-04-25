@@ -1,5 +1,9 @@
+<script>
 function populateGradebook(data) {
-    // This function will take the fetched grade data and populate the table
+    // your JS logic here
+}
+</script>
+// This function will take the fetched grade data and populate the table
     console.log("Populating gradebook with data:", data);
     let tableElm = document.getElementById("gradebook.js"); // Get the gradebook table element
 
