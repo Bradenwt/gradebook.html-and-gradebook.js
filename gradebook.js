@@ -1,6 +1,4 @@
-<script>
-function populateGradebook(data) {
-    // your JS logic here
+
 }
 </script>
 // This function will take the fetched grade data and populate the table
